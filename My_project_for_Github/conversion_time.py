@@ -83,6 +83,7 @@ class ConversionTime:
     def conversion(self):
         self.inputSecond()
         second = self.second
+
         year = second // 31536000
         second = second - year * 31536000
 
@@ -100,6 +101,7 @@ class ConversionTime:
 
         minute = second // 60
         second = second - minute * 60
+        
         print(self.cases(year, 'year'), self.cases(month, 'month'), self.cases(week, 'week'), self.cases(day, 'day'),\
               self.cases(hour, 'hour'), self.cases(minute, 'minute'), self.cases(second, 'second'))
 

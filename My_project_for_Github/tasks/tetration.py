@@ -17,9 +17,9 @@ class Tetration:
 
     def tetration(self):
         self.inputNumber()
-        counter = 1
+        counter = 0
         result = self.number
-        while counter < self.tetrator:
+        while counter < self.tetrator*2:
             result = result ** self.number
             counter += 1
         print('Тетратор равен', result)

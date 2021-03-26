@@ -1,3 +1,8 @@
+import sys
 
-for x in range(0,100,2):
-    print(x, end=' ')
+old_print = print
+f=open('log.txt')
+
+def print(*args, **kwargs):
+    old_print("~", *args, "~", **kwargs)
+print('govno')

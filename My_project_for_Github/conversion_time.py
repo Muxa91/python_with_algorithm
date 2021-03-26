@@ -1,12 +1,13 @@
+import main
 class ConversionTime:
-    second = 60
+    __second = 60
 
     def inputSecond(self):
         while True:
             try:
-                self.second = int(input('Введите количество секунд\n'))
-                if self.second <= 0:
-                    self.second = int(input('Введите положительное число\n'))
+                self.__second = int(input('Введите количество секунд\n'))
+                if self.__second <= 0:
+                    self.__second = int(input('Введите положительное число\n'))
                 else:
                     break
             except ValueError:
@@ -82,7 +83,7 @@ class ConversionTime:
 
     def conversion(self):
         self.inputSecond()
-        second = self.second
+        second = self.__second
 
         year = second // 31536000
         second = second - year * 31536000
@@ -105,5 +106,6 @@ class ConversionTime:
         print(self.cases(year, 'year'), self.cases(month, 'month'), self.cases(week, 'week'), self.cases(day, 'day'),\
               self.cases(hour, 'hour'), self.cases(minute, 'minute'), self.cases(second, 'second'))
 
-t = ConversionTime()
-t.conversion()
+        main.Menu().menu_after_task(repeat='conversion_time.ConversionTime().conversion()',
+                                    back='self.menu_mathematical_models()')
+

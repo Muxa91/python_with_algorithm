@@ -1,42 +1,42 @@
+import main
 class ConversionCurrency:
-    money = 112
-    smallСhange = 0
-    currency_input = '2'
-    currency_output = '1'
-    currency = {1: 'Доллар', 2: "Евро", 3: "Лира"}
-    currency_small_change = {1: 'Цент', 2: 'Евро-цент', 3: 'Куруш'}
-    # Костыль в методе(converter)выдает ошибку "KeyError"
-    currencyText = currency[int(currency_output)]
-    small_change_text = currency_small_change[int(currency_output)]
+    __money = 112
+    __smallСhange = 0
+    __currency_input = '2'
+    __currency_output = '1'
+    __currency = {1: 'Доллар', 2: "Евро", 3: "Лира"}
+    __currency_small_change = {1: 'Цент', 2: 'Евро-цент', 3: 'Куруш'}
+    __currencyText = __currency[int(__currency_output)]
+    __small_change_text = __currency_small_change[int(__currency_output)]
 
     def inputCurrency(self):
-        currency_tmp = self.currency
+        currency_tmp = self.__currency
         # Choosing a currency to convert
         while True:
             try:
                 print("Выберете валюту для конвертации\n", currency_tmp)
-                self.currency_input = int(input(''))
-                if 0 >= self.currency_input >= 4:
+                self.__currency_input = int(input(''))
+                if 0 >= self.__currency_input >= 4:
                     print("Выберете валюту для конвертации\n", currency_tmp)
-                    self.currency_input = int(input(''))
+                    self.__currency_input = int(input(''))
 
                 else:
-                    if self.currency_input == 1:
-                        self.money = int(input('Сколько Долларов необходимо конвертировать?\n'))
-                        self.smallСhange = int(input('Сколько центов необходимо конвертировать?\n'))
-                        while self.smallСhange > 99:
-                            self.smallСhange = int(input('Введите число меньше ста\n'))
-                    if self.currency_input == 2:
-                        self.money = int(input('Сколько Евро необходимо конвертировать?\n'))
-                        self.smallСhange = int(input('Сколько евро-центов необходимо конвертировать?\n'))
-                        while self.smallСhange > 99:
-                            self.smallСhange = int(input('Введите число меньше ста\n'))
-                    if self.currency_input == 3:
-                        self.money = int(input('Сколько Лир необходимо конвертировать?\n'))
-                        self.smallСhange = int(input('Сколько курушей необходимо конвертировать?\n'))
-                        while self.smallСhange > 99:
-                            self.smallСhange = int(input('Введите число меньше ста\n'))
-                    currency_tmp.pop(self.currency_input)
+                    if self.__currency_input == 1:
+                        self.__money = int(input('Сколько Долларов необходимо конвертировать?\n'))
+                        self.__smallСhange = int(input('Сколько центов необходимо конвертировать?\n'))
+                        while self.__smallСhange > 99:
+                            self.__smallСhange = int(input('Введите число меньше ста\n'))
+                    if self.__currency_input == 2:
+                        self.__money = int(input('Сколько Евро необходимо конвертировать?\n'))
+                        self.__smallСhange = int(input('Сколько евро-центов необходимо конвертировать?\n'))
+                        while self.__smallСhange > 99:
+                            self.__smallСhange = int(input('Введите число меньше ста\n'))
+                    if self.__currency_input == 3:
+                        self.__money = int(input('Сколько Лир необходимо конвертировать?\n'))
+                        self.__smallСhange = int(input('Сколько курушей необходимо конвертировать?\n'))
+                        while self.__smallСhange > 99:
+                            self.__smallСhange = int(input('Введите число меньше ста\n'))
+                    currency_tmp.pop(self.__currency_input)
                     break
             except ValueError:
                 print("Необходимо ввести число")
@@ -45,14 +45,14 @@ class ConversionCurrency:
         while True:
             try:
                 print("В какую валюту вы хотите конвертировать? \n", currency_tmp)
-                self.currency_output = int(input(''))
-                self.currencyText = self.currency[int(self.currency_output)]
-                self.small_change_text = self.currency_small_change[int(self.currency_output)]
-                if 0 >= self.currency_output >= 4:
+                self.__currency_output = int(input(''))
+                self.__currencyText = self.__currency[int(self.__currency_output)]
+                self.__small_change_text = self.__currency_small_change[int(self.__currency_output)]
+                if 0 >= self.__currency_output >= 4:
                     print("В какую валюту вы хотите конвертировать? \n", currency_tmp)
-                    self.currency_output = int(input(''))
+                    self.__currency_output = int(input(''))
                 else:
-                    currency_tmp.pop(self.currency_output)
+                    currency_tmp.pop(self.__currency_output)
                     break
             except ValueError:
                 print("Необходимо ввести число")
@@ -113,16 +113,18 @@ class ConversionCurrency:
         ratio = {1: 1, 2: 0.84, 3: 7.22}
 
         resultCurrency = int(
-            (self.money + self.smallСhange / 100) * ratio[self.currency_output] // ratio[self.currency_input])
+            (self.__money + self.__smallСhange / 100) * ratio[self.__currency_output] // ratio[self.__currency_input])
         currency_small_change = int(
-            ((self.money + self.smallСhange / 100) * ratio[self.currency_output] / ratio[
-                self.currency_input] - resultCurrency) * 100)
+            ((self.__money + self.__smallСhange / 100) * ratio[self.__currency_output] / ratio[
+                self.__currency_input] - resultCurrency) * 100)
 
-        print(self.currency_output)
-        print(self.currencyText)
-        print(self.casesCurency(currency=self.currencyText, money=resultCurrency),
-              self.casesCurency(currency=self.small_change_text, money=currency_small_change))
+        print(self.__currency_output)
+        print(self.__currencyText)
+        print(self.casesCurency(currency=self.__currencyText, money=resultCurrency),
+              self.casesCurency(currency=self.__small_change_text, money=currency_small_change))
+
+        main.Menu().menu_after_task(repeat='conversion_curency.ConversionCurrency().converter()',
+                                    back='self.menu_mathematical_models()')
 
 
-c = ConversionCurrency()
-c.converter()
+

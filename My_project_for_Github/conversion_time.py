@@ -1,4 +1,4 @@
-import main
+import menu
 class ConversionTime:
     __second = 60
 
@@ -106,6 +106,6 @@ class ConversionTime:
         print(self.cases(year, 'year'), self.cases(month, 'month'), self.cases(week, 'week'), self.cases(day, 'day'),\
               self.cases(hour, 'hour'), self.cases(minute, 'minute'), self.cases(second, 'second'))
 
-        main.Menu().menu_after_task(repeat='conversion_time.ConversionTime().conversion()',
+        menu.Menu().menu_after_task(repeat='conversion_time.ConversionTime().conversion()',
                                     back='self.menu_mathematical_models()')
 

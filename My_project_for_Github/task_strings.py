@@ -1,4 +1,4 @@
-import main
+import menu
 
 class Tasks_string:
     def input_string(self):
@@ -29,7 +29,7 @@ class Tasks_string:
 
         print('Самое длинное слово: ', longword, '.Самое часто встречаемое слова: ', counter(string))
 
-        main.Menu().menu_after_task(repeat='task_strings.Tasks_string().find_long_and_frequent()',
+        menu.Menu().menu_after_task(repeat='task_strings.Tasks_string().find_long_and_frequent()',
                                 back='self.menu_string()')
 
     # Посчитайте, сколько раз символ встречается в строке
@@ -40,7 +40,7 @@ class Tasks_string:
         for x in string:
             if x == symbol:
                 count += 1
-        main.Menu().menu_after_task(repeat='task_strings.Tasks_string().find_symbol()',
+        menu.Menu().menu_after_task(repeat='task_strings.Tasks_string().find_symbol()',
                                 back='self.menu_string()')
 
     # Найти палиндром
@@ -53,5 +53,5 @@ class Tasks_string:
                 print(word, 'Палиндром', end='\t')
             else:
                 print(word, 'Не алиндром', end='\t')
-        main.Menu().menu_after_task(repeat='task_strings.Tasks_string().find_palindrome()',
+        menu.Menu().menu_after_task(repeat='task_strings.Tasks_string().find_palindrome()',
                                 back='self.menu_string()')

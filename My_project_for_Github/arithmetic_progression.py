@@ -1,4 +1,5 @@
-import main
+import menu
+
 class Arithmetic_progression():
     __start = 1
     __step = 1
@@ -34,6 +35,6 @@ class Arithmetic_progression():
         for x in range(start, stop, step):
             print(x, end=' ')
 
-        main.Menu().menu_after_task(repeat='arithmetic_progression.Arithmetic_progression().output_range()',
+        menu.Menu().menu_after_task(repeat='arithmetic_progression.Arithmetic_progression().output_range()',
                                       back='self.menu_mathematical_models()')
 

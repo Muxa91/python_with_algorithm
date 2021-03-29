@@ -1,4 +1,4 @@
-import main
+import menu
 class Pascals_triangle:
     __height = 0
 
@@ -20,5 +20,5 @@ class Pascals_triangle:
                 row[x] = row[x] + row[x + 1]
             print('  ' * (self.__height - len(row)), row)
 
-        main.Menu().menu_after_task(repeat='pascals_triangle.Pascals_triangle().triangle()',
+        menu.Menu().menu_after_task(repeat='pascals_triangle.Pascals_triangle().triangle()',
                                     back='self.menu_mathematical_models()')

@@ -1,4 +1,4 @@
-import main
+import menu
 
 
 class Tasks_dict:
@@ -40,7 +40,7 @@ class Tasks_dict:
             my_dict_sorted_reverse[x] = my_dict[x]
         print(my_dict_sorted)
         print(my_dict_sorted_reverse)
-        main.Menu().menu_after_task(repeat='task_dict.Tasks_dict().sort_dict()',
+        menu.Menu().menu_after_task(repeat='task_dict.Tasks_dict().sort_dict()',
                                 back='self.menu_dict()')
 
     # Напишите программу для слияния нескольких словарей в один.
@@ -52,7 +52,7 @@ class Tasks_dict:
         self.__my_dict2 = self.__input_dict()
         result = {**self.__my_dict, **self.__my_dict2}
         print(result)
-        main.Menu().menu_after_task(repeat='task_dict.Tasks_dict().merger_two_dict()',
+        menu.Menu().menu_after_task(repeat='task_dict.Tasks_dict().merger_two_dict()',
                                 back='self.menu_dict()')
 
     # Найдите три ключа с самыми высокими значениями в словаре
@@ -67,5 +67,5 @@ class Tasks_dict:
         for x in sortedKey:
             my_dict_sorted[x] = self.__my_dict[x]
         print(my_dict_sorted)
-        main.Menu().menu_after_task(repeat='task_dict.Tasks_dict().find_three_max_values()',
+        menu.Menu().menu_after_task(repeat='task_dict.Tasks_dict().find_three_max_values()',
                                 back='self.menu_dict()')

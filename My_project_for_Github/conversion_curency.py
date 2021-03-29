@@ -1,4 +1,6 @@
-import main
+import menu
+
+
 class ConversionCurrency:
     __money = 112
     __smallСhange = 0
@@ -61,6 +63,8 @@ class ConversionCurrency:
     def casesCurency(self, currency, money):
         currency = currency
         money = money
+        if currency == "Евро":
+            return str(money) + " Евро"
 
         if 11 <= int(str(money)[-2:]) <= 19:
             if currency == "Доллар":
@@ -123,8 +127,5 @@ class ConversionCurrency:
         print(self.casesCurency(currency=self.__currencyText, money=resultCurrency),
               self.casesCurency(currency=self.__small_change_text, money=currency_small_change))
 
-        main.Menu().menu_after_task(repeat='conversion_curency.ConversionCurrency().converter()',
+        menu.Menu().menu_after_task(repeat='conversion_curency.ConversionCurrency().converter()',
                                     back='self.menu_mathematical_models()')
-
-
-

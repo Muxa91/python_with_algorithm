@@ -1,4 +1,4 @@
-import main
+import menu
 class Tetration:
     __number = 0
     __tetrator = 0
@@ -25,6 +25,6 @@ class Tetration:
             counter += 1
         print('Тетратор равен', result)
 
-        main.Menu().menu_after_task(repeat='tetration.Tetration().tetration()',
+        menu.Menu().menu_after_task(repeat='tetration.Tetration().tetration()',
                                 back='self.menu_mathematical_models()')
 

@@ -1,4 +1,4 @@
-import main
+import menu
 class Tasks_lists:
     def __input_nubers(self):
         while True:
@@ -21,7 +21,7 @@ class Tasks_lists:
         l = self.__input_nubers()
         result = [x for x in l if int(x) < 5]
         print(result)
-        main.Menu().menu_after_task(repeat='tasks_list.Tasks_lists().make_list_tuple().find_less_than_five()',
+        menu.Menu().menu_after_task(repeat='tasks_list.Tasks_lists().make_list_tuple().find_less_than_five()',
                                     back='self.menu_list()')
     # Нужно вернуть список, который состоит из элементов, общих для этих двух списков.
     def find_common_elements(self):
@@ -31,7 +31,7 @@ class Tasks_lists:
         b = self.__input_nubers()
         result = [x for x, j in zip(a, b) if x == j]
         print(result)
-        main.Menu().menu_after_task(repeat='tasks_list.Tasks_lists().make_list_tuple().find_common_elements()',
+        menu.Menu().menu_after_task(repeat='tasks_list.Tasks_lists().make_list_tuple().find_common_elements()',
                                     back='self.menu_list()')
 
     # Вы принимаете от пользователя последовательность чисел, разделённых запятой.
@@ -42,7 +42,7 @@ class Tasks_lists:
         number_tuple = tuple(number_list)
         print("Картеж\n", number_tuple)
         print("Список\n", number_list)
-        main.Menu().menu_after_task(repeat='tasks_list.Tasks_lists().make_list_tuple().make_list_tuple()',
+        menu.Menu().menu_after_task(repeat='tasks_list.Tasks_lists().make_list_tuple().make_list_tuple()',
                                     back='self.menu_list()')
 
     # Выведите первый и последний элемент списка.
@@ -50,7 +50,7 @@ class Tasks_lists:
         print("Вывести первый и последний элемент списка")
         list1 = self.__input_nubers()
         print("первый элемент",list1[0],"Второй элемент", list[-1])
-        main.Menu().menu_after_task(repeat='tasks_list.Tasks_lists().make_list_tuple().find_first_last_elemets()',
+        menu.Menu().menu_after_task(repeat='tasks_list.Tasks_lists().make_list_tuple().find_first_last_elemets()',
                                     back='self.menu_list()')
 
     # Напишите программу, которая выводит чётные числа из заданного списка и останавливается, если встречает число 237.
@@ -64,7 +64,7 @@ class Tasks_lists:
             elif x == 237:
                 break
         print(list_result)
-        main.Menu().menu_after_task(repeat='tasks_list.Tasks_lists().make_list_tuple().find_even_numbers()',
+        menu.Menu().menu_after_task(repeat='tasks_list.Tasks_lists().make_list_tuple().find_even_numbers()',
                                     back='self.menu_list()')
 
     # # Напишите программу, которая принимает два списка и выводит все элементы первого, которых нет во втором.
@@ -75,7 +75,7 @@ class Tasks_lists:
         print('Введите второй список')
         list2 = self.__input_nubers()
         print(set(list1) - set(list2))
-        main.Menu().menu_after_task(repeat='tasks_list.Tasks_lists().make_list_tuple().find_differences()',
+        menu.Menu().menu_after_task(repeat='tasks_list.Tasks_lists().make_list_tuple().find_differences()',
                                     back='self.menu_list()')
 
     # С помощью анонимной функции извлеките из списка числа, делимые на 15
@@ -83,7 +83,7 @@ class Tasks_lists:
         lists = self.__input_nubers()
         result = list(filter(lambda x: x % 15 == 0, lists))
         print(result)
-        main.Menu().menu_after_task(repeat='tasks_list.Tasks_lists().make_list_tuple().find_multiple_15()',
+        menu.Menu().menu_after_task(repeat='tasks_list.Tasks_lists().make_list_tuple().find_multiple_15()',
                                     back='self.menu_list()')
 
     # Нужно проверить, все ли числа в последовательности уникальны.
@@ -94,5 +94,5 @@ class Tasks_lists:
             print("Все числа уникальны")
         else:
             print("Не все числа уникальны")
-        main.Menu().menu_after_task(repeat='tasks_list.Tasks_lists().make_list_tuple().check_uniqueness()',
+        menu.Menu().menu_after_task(repeat='tasks_list.Tasks_lists().make_list_tuple().check_uniqueness()',
                                     back='self.menu_list()')

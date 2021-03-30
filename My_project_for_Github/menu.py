@@ -12,7 +12,7 @@ import task_strings
 class LoggingPrinter:
 
     def __init__(self):
-        self.out_file = open('My_log.txt', "w")
+        self.out_file = open('my_log.txt', "w")
         self.old_stdout = sys.stdout
         # этот объект возьмет на себя работу `stdout`
         sys.stdout = self
@@ -42,7 +42,7 @@ class LoggingPrinter:
     def __exit__(self, type, value, traceback):
         # Восстановление исходного объекта stdout.
         sys.stdout = self.old_stdout
-
+        self.out_file.close()
 
 def input(text):
     arg = LoggingPrinter().input(text)

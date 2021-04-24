@@ -1,5 +1,5 @@
 import menu
-import os
+
 class ConversionTime:
     __second = 60
 

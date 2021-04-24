@@ -1,5 +1,5 @@
 import menu
-import os
+
 class Tetration:
     __number = 0
     __tetrator = 0

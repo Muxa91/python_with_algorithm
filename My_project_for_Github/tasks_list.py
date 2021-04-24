@@ -1,5 +1,5 @@
 import menu
-import os
+
 class Tasks_lists:
     def __input_nubers(self):
         while True:

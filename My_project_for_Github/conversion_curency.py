@@ -1,6 +1,6 @@
 import menu
-
-
+import os
+import os
 class ConversionCurrency:
     __money = 112
     __smallСhange = 0

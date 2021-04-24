@@ -1,4 +1,5 @@
-import menu
+# import menu
+
 
 class Arithmetic_progression():
     __start = 1
@@ -7,7 +8,7 @@ class Arithmetic_progression():
 
     def input_A_progr(self):
         while True:
-             try:
+            try:
                 self.__start = int(input('Введите начальное значение арифметической прогресии\n'))
                 self.__step = int(input('Ведите шаг арифметической прогрессии\n'))
                 self.__stop = int(input('Ведите конец арифметической прогрессии\n'))
@@ -24,8 +25,8 @@ class Arithmetic_progression():
                 else:
                     self.__stop += 1
                     break
-             except ValueError:
-                 print('Введите число')
+            except ValueError:
+                print('Введите число')
 
     def output_range(self):
         self.input_A_progr()
@@ -36,5 +37,4 @@ class Arithmetic_progression():
             print(x, end=' ')
 
         menu.Menu().menu_after_task(repeat='arithmetic_progression.Arithmetic_progression().output_range()',
-                                      back='self.menu_mathematical_models()')
-
+                                    back='self.menu_mathematical_models()')

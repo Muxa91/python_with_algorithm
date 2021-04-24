@@ -304,6 +304,3 @@ class Menu:
                     print('необходимо ввести цифру')
 
 
-# if __name__ == '__main__':
-#     with LoggingPrinter():
-#         Menu().start_program()

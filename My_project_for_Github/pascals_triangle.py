@@ -1,4 +1,5 @@
 import menu
+import os
 class Pascals_triangle:
     __height = 0
 
